@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Naseem - CSS pulse Animation</title>
+    <style>
+      .center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    background:#1d1e22;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .orange{background: #f17c57fa}
+  .pulse {animation: pulse-animation 2s infinite}
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(241, 124, 87,0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 50px rgba(241, 124, 87, 0);
+    }
+  }
+    </style>
+</head>
+<body>
+  <div class="center">
+  <div class="circle pulse orange"></div>
+</div>
+</body>
+</html>
