@@ -1,0 +1,255 @@
+/* تعريف المتغيرات الأساسية */
+:root {
+  /* الألوان */
+  --primary-color: #0d0c0e;
+  --secondary-color: #fff;
+  --fav-color: #00feef;
+  --accent-color: rgba(230, 228, 251, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --text-color: #4a5567;
+  --text-color-light: #f1f0fd;
+
+  /* الأحجام */
+  --swiper-slide-height: 68px;
+  --swiper-slide-gap: 8px;
+  --swiper-slide-count: 3;
+  --swiper-height: calc(
+    (var(--swiper-slide-height) * var(--swiper-slide-count)) +
+      (var(--swiper-slide-gap) * (var(--swiper-slide-count) - 1))
+  );
+  --border-radius: 12px;
+  --section-title-font-size: 32px;
+  --section-title-line-height: 44px;
+  --section-title-font-size-sm: 24px;
+  --section-title-line-height-sm: 34px;
+  --section-heading-gap: 12px;
+  --section-padding: 60px 0 16px;
+  --container-width: 620px;
+  --container-padding: 15px;
+  --currency-card-padding: 16px;
+  --currency-card-gap: 20px;
+  --font-size-base: 16px;
+  --line-height-base: 24px;
+  --gap-small: 8px;
+  --gap-large: 24px;
+  --gap-xlarge: 32px;
+  --blur-amount: 6.5px;
+}
+
+/* تهيئة السلايدر */
+.swiper {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+  height: var(--swiper-height);
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--swiper-slide-height);
+  margin-bottom: var(--swiper-slide-gap);
+}
+
+.swiper-slide:last-child {
+  margin-bottom: 0;
+}
+
+/* بطاقات العملات */
+.currency-card {
+  display: flex;
+  align-items: center;
+  gap: var(--currency-card-gap);
+  padding: var(--currency-card-padding);
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  height: 100%;
+}
+
+.currency-icon {
+  flex-basis: 33px;
+  text-align: center;
+}
+
+.currency-icon i {
+  font-size: 24px;
+  color: var(--fav-color);
+}
+
+.currency-info.name {
+  flex: 1;
+}
+
+.currency-info.currency {
+  flex: 0.5;
+}
+
+.currency-info {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* رأس بطاقات العملات */
+.currency-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--currency-card-gap);
+  padding: 4px 16px;
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--border-radius);
+}
+
+/* تأثير التلاشي للسلايدر */
+.coins-slider::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    0deg,
+    var(--primary-color) 0%,
+    rgba(13, 12, 14, 0) 100%
+  );
+  z-index: 2;
+}
+
+/* عنوان القسم */
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-heading-gap);
+  width: var(--container-width);
+  max-width: 55%;
+  position: relative;
+  z-index: 10;
+  margin-bottom: var(--gap-xlarge);
+}
+
+.section-heading .section-title {
+  font-size: var(--section-title-font-size);
+  line-height: var(--section-title-line-height);
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.section-heading p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .section-heading {
+    margin-bottom: var(--gap-large);
+    max-width: 100%;
+    text-align: center;
+  }
+  .section-heading .section-title {
+    font-size: var(--section-title-font-size-sm);
+    line-height: var(--section-title-line-height-sm);
+  }
+}
+
+/* الحاوية الرئيسية */
+.container {
+  width: 100%;
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-large);
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .exchange-rates-container {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+/* قسم العملات المشفرة */
+.cryptocurrency-section {
+  position: relative;
+  background-color: var(--primary-color);
+  overflow: hidden;
+  color: var(--secondary-color);
+  padding: var(--section-padding);
+}
+
+/* حاوية أسعار العملات */
+.exchange-rates-container {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+  overflow: hidden;
+}
+
+/* إعادة تعيين الأنماط الافتراضية */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--primary-color);
+}
+ul {
+  list-style: none;
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--section-title-font-size);
+}
+
+p {
+  line-height: var(--line-height-base);
+}

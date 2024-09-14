@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Swiper Template Project - css &amp; html &amp; js with Swiper.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="home-wrapper">
+  <section class="cryptocurrency-section" style="order: 3;">
+    <div class="container">
+      <div class="section-heading text-white">
+        <h2 class="section-title">Cryptocurrency Prices</h2>
+        <p>Stay updated with the latest cryptocurrency exchange rates</p>
+      </div>
+      <div class="exchange-rates-container">
+        <div class="currency-card-head">
+          <div class="currency-icon"></div>
+          <span class="currency-info name">Name</span>
+          <span class="currency-info currency">Price (USD)</span>
+          <span class="currency-info currency">Change (24h)</span>
+        </div>
+        <!-- Swiper Slider -->
+        <div class="swiper coins-slider active">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="currency-card">
+                <div class="currency-icon">
+                  <i class="fab fa-bitcoin"></i>
+                </div>
+                <span class="currency-info name">Bitcoin</span>
+                <span class="currency-info currency">$27,500</span>
+                <span class="currency-info currency">+1.5%</span>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="currency-card">
+                <div class="currency-icon">
+                  <i class="fab fa-ethereum"></i>
+                </div>
+                <span class="currency-info name">Ethereum</span>
+                <span class="currency-info currency">$1,800</span>
+                <span class="currency-info currency">+2.0%</span>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="currency-card">
+                <div class="currency-icon">
+                  <i class="fab fa-monero"></i>
+                </div>
+                <span class="currency-info name">Monero</span>
+                <span class="currency-info currency">$150</span>
+                <span class="currency-info currency">+0.8%</span>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="currency-card">
+                <div class="currency-icon">
+                  <i class="fas fa-litecoin-sign"></i>
+                </div>
+                <span class="currency-info name">Litecoin</span>
+                <span class="currency-info currency">$200</span>
+                <span class="currency-info currency">+1.2%</span>
+              </div>
+            </div>
+            <!-- يمكنك إضافة المزيد من الشرائح هنا -->
+          </div>
+        </div>
+        <!-- End of Swiper Slider -->
+      </div>
+    </div>
+  </section>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
